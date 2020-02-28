@@ -1,3 +1,3 @@
 # taller_5
-By: Tatiana Macias
+By: Tatiana Macias,
 Dayana Romero
