@@ -64,9 +64,9 @@ Scenario Outline: Register student success
        And I fill with the <nombre>, <apellido>, <correo>, <universidad>, <departamento>, <programa>, <contraseña>
        And I accept terms and conditions
        And I try to register
-       Then I expect to see login success
+       Then I expect to see register success
 
       Examples:
       | nombre      | apellido | correo          | universidad                      | departamento      | programa              | contraseña    |
-      | Maria       | Cardenas | v2@mail.com   | Universidad Nacional             |                   | Maestría en Bioinformática | 123456789  |
-      | Tati        | Lopez    | r2@mail.com   | Pontificia Universidad Javeriana | Dpto Comunicación |            | 123456789  |
+      | Maria       | Cardenas | e12@mail.com   | Universidad Nacional             |                   | Maestría en Bioinformática | 123456789  |
+      | Tati        | Lopez    | e12@mail.com   | Pontificia Universidad Javeriana | Dpto Comunicación |            | 123456789  |

@@ -12,6 +12,7 @@ Given('I go to losestudiantes home screen', () => {
 
 When('I open the login screen', () => {
 
+
   if($('button=Cuenta').isDisplayed()) {
     $('button=Cuenta').click()
     $('Salir').click()
@@ -117,7 +118,13 @@ Then('I expect to see error input', () => {
 });
 
 Then('I expect to see login success', () => {
-  browser.$('button[id=cuenta]').waitForDisplayed(5000);
+  $('button[id="cuenta"]').waitForDisplayed(5000);
+});
+
+Then('I expect to see register success', () => {
+  $('.sweet-alert').waitForDisplayed(5000);
+  $('button[class="btn btn-lg btn-primary "]').click();
+  $('button[id="cuenta"]').waitForDisplayed(5000);
 });
 
 Then('I expect to see this {string}', error => {
