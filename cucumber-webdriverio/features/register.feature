@@ -68,5 +68,5 @@ Scenario Outline: Register student success
 
       Examples:
       | nombre      | apellido | correo          | universidad                      | departamento      | programa              | contraseña    |
-      | Maria       | Cardenas | e12@mail.com   | Universidad Nacional             |                   | Maestría en Bioinformática | 123456789  |
-      | Tati        | Lopez    | e12@mail.com   | Pontificia Universidad Javeriana | Dpto Comunicación |            | 123456789  |
+      | Maria       | Cardenas | e78@mail.com   | Universidad Nacional             |                   | Maestría en Bioinformática | 123456789  |
+      | Tati        | Lopez    | e79@mail.com   | Pontificia Universidad Javeriana | Dpto Comunicación |            | 123456789  |

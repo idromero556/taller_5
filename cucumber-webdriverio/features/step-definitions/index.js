@@ -13,9 +13,9 @@ Given('I go to losestudiantes home screen', () => {
 When('I open the login screen', () => {
 
 
-  if($('button=Cuenta').isDisplayed()) {
-    $('button=Cuenta').click()
-    $('Salir').click()
+  if($('button[id=cuenta]').isDisplayed()) {
+    $('button[id=cuenta]').click()
+    $('a[role="menuitem"]').click()
   };
   const btnIngresar = $('button=Ingresar');
   btnIngresar.waitForExist(5000);
