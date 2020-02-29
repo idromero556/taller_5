@@ -8,18 +8,19 @@ Given('I go to losestudiantes home screen', () => {
   if($('button=Cerrar').isDisplayed()) {
     $('button=Cerrar').click();
   }
-  if($('button=Cuenta').isDisplayed()) {
-    $('button=Cuenta').click()
-    $('a=Salir').click()
-  }
 });
 
 When('I open the login screen', () => {
-    const btnIngresar = $('button=Ingresar');
-    btnIngresar.waitForExist(5000);
-    btnIngresar.waitForDisplayed(5000);
-    browser.waitUntil(() => btnIngresar.isClickable());
-    btnIngresar.click();
+  
+  if($('button=Cuenta').isDisplayed()) {
+    $('button=Cuenta').click()
+    $('Salir').click()
+  };
+  const btnIngresar = $('button=Ingresar');
+  btnIngresar.waitForExist(5000);
+  btnIngresar.waitForDisplayed(5000);
+  browser.waitUntil(() => btnIngresar.isClickable());
+  btnIngresar.click();
 });
 
 When('I try to login', () => {
@@ -120,6 +121,5 @@ Then('I expect to see login success', () => {
 });
 
 Then('I expect to register me', () => {
- var alertText = $('.sweet-alert').waitForDisplayed(8000)
- expect(alertText).to.include("Registro exitoso");
+  browser.$('button=Cuenta').isDisplayed();
 });

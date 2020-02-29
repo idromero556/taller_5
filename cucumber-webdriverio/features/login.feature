@@ -23,5 +23,5 @@ Scenario Outline: Login success
     Then I expect to see login success
 
     Examples:
-      | email            | password | error                    |
-      | dt.macias@uniandes.edu.co | prueba12345 | |
+      | email            | password |                   
+      | dt.macias@uniandes.edu.co | prueba12345 | 
