@@ -11,7 +11,7 @@ Given('I go to losestudiantes home screen', () => {
 });
 
 When('I open the login screen', () => {
-  
+
   if($('button=Cuenta').isDisplayed()) {
     $('button=Cuenta').click()
     $('Salir').click()
@@ -39,7 +39,7 @@ Then('I expect to not be able to login', () => {
   $('.aviso.alert.alert-danger').waitForDisplayed(5000);
 });
 
-/*When(/^I fill with (.*) and (.*)$/ , (email, password) => {
+When(/^I fill with (.*) and (.*)$/ , (email, password) => {
   var cajaLogIn = $('.cajaLogIn');
 
  var mailInput = cajaLogIn.$('input[name="correo"]');
@@ -49,9 +49,9 @@ Then('I expect to not be able to login', () => {
  var passwordInput = cajaLogIn.$('input[name="password"]');
  passwordInput.click();
  passwordInput.keys(password)
-});*/
+});
 
-When(/^I fill with the (.*), (.*), (.*), (.*), (.*), (.*) and (.*)$/ , (nombre, apellido, correo, universidad, departamento, programa, contraseña) => {
+When(/^I fill with the (.*), (.*), (.*), (.*), (.*), (.*), (.*)$/ , (nombre, apellido, correo, universidad, departamento, programa, contraseña) => {
    var cajaSignUp = $('.cajaSignUp');
    cajaSignUp.waitForExist(9000);
    cajaSignUp.waitForDisplayed(9000);
@@ -117,9 +117,11 @@ Then('I expect to see error input', () => {
 });
 
 Then('I expect to see login success', () => {
- browser.$('button=Cuenta').isDisplayed(5000);
+  browser.$('button[id=cuenta]').waitForDisplayed(5000);
 });
 
-Then('I expect to register me', () => {
-  browser.$('button=Cuenta').isDisplayed();
+Then('I expect to see this {string}', error => {
+  $('.sweet-alert').waitForDisplayed(5000);
+  var alertText = browser.$('.sweet-alert').getText();
+  expect(alertText).to.include(error);
 });
